@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="page-container">
+<image class="bg" src="../../images/星云淡然.jpg"></image>
+  <view>
+  <text class="title" style="position: relative; left: 141rpx; top: 233rpx; color: white">手写数字识别系统</text></view>
+  <view><image src="{{imgSrc}}" class="showImg" style="position: relative; left: -58rpx; top: 268rpx; width: 514rpx; height: 495rpx; display: inline-block; box-sizing: border-box"></image></view>
+  
+  
+  <view class="middle">
+    <view class="iconfont icon-paishe"  bindtap='loadImage' style="position: relative; left: 202rpx; top: 357rpx; color: rgb(62, 218, 218)"></view>
+    
+    <button class='btn1' bindtap='loadImage'  style="position: relative; left: 0rpx; top: 214rpx; width: 200rpx; height: 59rpx; display: flex; box-sizing: border-box">
+     上传图片
+    </button>
+    <button class='btn1' bindtap='identify'  style="position: relative; left: 247rpx; top: 80rpx; width: 190rpx; height: 59rpx; display: flex; box-sizing: border-box">开始识别</button>
+    <button class='btn2' bindtap='next_calculator'  style="position: relative; left: 0rpx; top: 101rpx">手写板</button>
+  </view>
+ 
+</view>
