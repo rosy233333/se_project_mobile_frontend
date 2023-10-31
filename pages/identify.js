@@ -23,9 +23,10 @@ Page({
     })
        var users=[];
        var that = this;
-       var arrayBuffer=wx.base64ToArrayBuffer(image);
+       var arrayBuffer=wx.base64ToArrayBuffer(that.data.image);
        var base64=wx.arrayBufferToBase64(arrayBuffer);
-       that.setData({ identifyImage: 'data:image/png;base64,' + base64});
+       console.log(base64);
+       that.setData({ identifyImage: 'data:image/jpg;base64,' + base64});
         wx.request({
           url: 'http://localhost:8080/getUser',
           method: 'POST',
@@ -106,11 +107,10 @@ Page({
         if (res.confirm) { //点击了确认
           console.log(res.content)//用户输入的值
           wx.request({
-            url: '', //仅为示例，并非真实的接口地址
+            url: 'http://localhost:8080/use/feedback', //仅为示例，并非真实的接口地址
             method:'post',
             data: {
-              x: 'right',
-              y: ''
+              feedback: 'right'
             },
             header: {
               'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -125,8 +125,7 @@ Page({
             url: '', //仅为示例，并非真实的接口地址
             method:'post',
             data: {
-              x: 'wrong',
-              y: ''
+              feedback: 'wrong'
             },
             header: {
               'content-type': 'application/x-www-form-urlencoded' // 默认值

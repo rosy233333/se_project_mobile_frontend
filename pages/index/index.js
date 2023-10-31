@@ -102,11 +102,12 @@ identify() {
     filePath: that.data.imgSrc,
     name: 'file',
     formData: {
-        'user': 'test'
+        'postfix': '.png'
     },
     success (res){
         console.log(res);
-        const data = res.data
+        const data_str = res.data;
+        const data = JSON.parse(data_str)
         //do something
          // wx.navigateTo({url: '/pages/identify',})
          wx.navigateTo({url: '/pages/identify?image='+data.file+"&text="+data.text,})
