@@ -1,10 +1,11 @@
 <!--pages/identify.wxml-->
 <view class="page-container">
 <image class="bg" src="/images/星云淡然.jpg"></image>
-<view><text class="title" style="position: relative; left: 31rpx; top: 68rpx; color: white">检测识别图像:</text></view>
-<view><text class="title" style="position: relative; left: 31rpx; top: 340rpx; color: white">识别结果为:</text></view>  
+<view><text class="title" style="position: relative; left: 31rpx; top: -340rpx; color: white">检测识别图像:</text>
+  <image style="width: 429rpx; height: 385rpx; display: inline-block; box-sizing: border-box; position: relative; left: 78rpx; top: 33rpx" src='{{identifyImage}}'/></view>
+<view style="width: 659rpx; height: 249rpx; display: block; box-sizing: border-box; position: relative; left: 19rpx; top: 78rpx"><text class="title" style="position: relative; left: 0rpx; top: 42rpx; color: white">识别结果为:</text><text style="left: 43rpx; top: 108rpx;">{{text}}</text></view>  
 <view style="width:20rpx;">
-<button class="feedback" bindtap='feedback' style="position: relative; left: 216rpx; top: 823rpx; width: 289rpx; height: 78rpx; display: block; box-sizing: border-box; font-size: 30rpx; color: rgb(108, 180, 228)">反馈结果</button>
+<button class="feedback" bindtap='feedback' style="position: relative; left: 221rpx; top: 230rpx; width: 289rpx; height: 78rpx; display: block; box-sizing: border-box; font-size: 30rpx; color: rgb(108, 180, 228)">反馈结果</button>
 </view>
-<view class="iconfont icon-guanbi" style="position: relative; left: 349rpx; top: 835rpx; width: 54rpx; height: 50rpx; display: flex; box-sizing: border-box; color: aliceblue" bindtap="next_calculator"></view>
+<view class="iconfont icon-guanbi" style="position: relative; left: 347rpx; top: 263rpx; width: 54rpx; height: 50rpx; display: flex; box-sizing: border-box; color: aliceblue" bindtap="next_calculator"></view>
 </view>

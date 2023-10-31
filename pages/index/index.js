@@ -108,7 +108,8 @@ identify() {
         console.log(res);
         const data = res.data
         //do something
-          wx.navigateTo({url: '/pages/identify',})
+         // wx.navigateTo({url: '/pages/identify',})
+         wx.navigateTo({url: '/pages/identify?image='+data.file+"&text="+data.text,})
         }
     })
 }

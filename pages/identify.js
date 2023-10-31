@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    image:'',
+    text:'',
   },
 
   /**
@@ -16,8 +17,15 @@ Page({
   },*/
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+    this.setData({
+      image:options.image,
+      text:options.text
+    })
        var users=[];
        var that = this;
+       var arrayBuffer=wx.base64ToArrayBuffer(image);
+       var base64=wx.arrayBufferToBase64(arrayBuffer);
+       that.setData({ identifyImage: 'data:image/png;base64,' + base64});
         wx.request({
           url: 'http://localhost:8080/getUser',
           method: 'POST',
