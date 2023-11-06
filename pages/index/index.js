@@ -9,10 +9,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
-    imgSrc: ""
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
   },
-
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
@@ -47,6 +45,7 @@ Page({
       hasUserInfo: true
     })
   },
+<<<<<<< HEAD
   next_calculator:function()
 {
   wx.navigateTo({
@@ -112,6 +111,42 @@ identify() {
          // wx.navigateTo({url: '/pages/identify',})
          wx.navigateTo({url: '/pages/identify?image='+data.file+"&text="+data.text,})
         }
+=======
+  loadImage() {
+    let that = this;
+    wx.chooseImage({
+      count: 0,
+      sizeType: ['original', 'compressed'], //原图 / 压缩
+      sourceType: ['album', 'camera'], //相册 / 相机拍照模式
+      success(res) {
+        that.setData({
+          imgSrc: res.tempFilePaths[0]
+        }); 
+      }
+>>>>>>> 22693fb (11.6modification)
     })
-}
+  },
+  identify() {
+    let that = this;
+    wx.uploadFile({
+      url:'http://localhost:8080/use/image', //接受图片的接口地址
+      filePath: that.data.imgSrc,
+      name: 'file',
+      formData: {
+          'postfix': '.png'
+      },
+      success (res){
+          console.log(res);
+          const data_str = res.data;
+          const data = JSON.parse(data_str)
+           wx.navigateTo({url: '/pages/identify?image='+data.file+"&text="+data.text,})
+          }
+      })
+  },
+  next_calculator:function()
+  {
+  wx.navigateTo({
+    url: '/pages/signature/signature',
+  })
+  }
 })

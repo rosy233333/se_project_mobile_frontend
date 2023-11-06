@@ -1,6 +1,10 @@
 {
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+<<<<<<< HEAD
   "projectname": "se_project_mobile_frontend",
+=======
+  "projectname": "miniprogram-2",
+>>>>>>> 22693fb (11.6modification)
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false
@@ -10,6 +14,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/signature/signature",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/index/index",
           "query": "",
           "launchMode": "default",
@@ -17,14 +28,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/identify",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/signature",
+          "pathName": "pages/identify/identify",
           "query": "",
           "launchMode": "default",
           "scene": null

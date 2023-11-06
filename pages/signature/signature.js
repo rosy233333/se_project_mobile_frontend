@@ -1,4 +1,4 @@
-// pages/signature.js
+// pages/signature/signature.js
 const app = getApp()
 Page({
   data: {
@@ -48,7 +48,7 @@ Page({
       ctx.lineWidth = 4; // 字体粗细
       ctx.font = '40px Arial'; // 字体大小，
       ctx.fillStyle = '#ecf0ef'; // 填充颜色
-      ctx.fillText('签名区', res[0].width / 2 - 60, res[0].height / 2)
+      ctx.fillText('手写区', res[0].width / 2 - 60, res[0].height / 2)
       this.setData({ ctx, canvas })
     })
   },
@@ -99,7 +99,22 @@ Page({
                 //do something
             }
         })*/
-        保存图片到相册
+        let that = this;
+        wx.uploadFile({
+          url:'http://localhost:8080/use/image', //接受图片的接口地址
+          filePath: res.tempFilePath,
+          name: 'file',
+          formData: {
+              'postfix': '.png'
+          },
+          success (res){
+              console.log(res);
+              const data_str = res.data;
+              const data = JSON.parse(data_str)
+               wx.navigateTo({url: '/pages/identify/identify?image='+data.file+"&text="+data.text,})
+              }
+          })
+        //保存图片到相册
         console.log(res.tempFilePath);
          wx.saveImageToPhotosAlbum({
            filePath: res.tempFilePath,

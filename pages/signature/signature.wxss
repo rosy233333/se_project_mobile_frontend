@@ -1,6 +1,7 @@
-/* pages/signature.wxss */
+/* pages/signature/signature.wxss */
 page {
-  background-color: #e9f2f1;
+  /*background-color: #e9f2f1;*/
+  background-color: #FFEBCD;
 }
 .btn {
   display: flex;
@@ -10,12 +11,15 @@ page {
 
 }
 .btn button:first-child {
-  color: #3fa89a;
+  /*color: #3fa89a;*/
+  color:#F1C37F;
+ 
 }
 
 .btn button:last-child {
   color: white;
-  background-color: #3fa89a;
+  /*background-color: #FFEBCD;*/
+  background-color:#e4cc87;
 }
 button {
   width: 200rpx;
