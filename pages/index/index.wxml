@@ -1,33 +1,4 @@
 <!--index.wxml-->
-<<<<<<< HEAD
-<view class="page-container">
-<image class="bg" src="../../images/星云淡然.jpg"></image>
-  <view>
-  <text class="title" style="position: relative; left: 20%; top: 233rpx; color: white">手写数字识别系统</text></view>
-  <view><image src="{{imgSrc}}" class="showImg" style="position: relative; left: -7%; top: 233rpx; width: 514rpx; height: 495rpx; display: inline-block; box-sizing: border-box"></image></view>
-  
-  
-  
-    <!--<view class="iconfont icon-paishe"  bindtap='loadImage' style="position: relative; left: 94rpx; top: 497rpx; color: black"></view>-->
-    
-    <!--<button class='btn1' bindtap='loadImage'  style="position: relative; left: -29rpx; top: 387rpx; width: 235rpx; height: 59rpx; display: flex; box-sizing: border-box">
-      
-     
-      上传图片
-      
-     
-    </button>-->
-    <view bindtap='loadImage' class="button1" style="position: relative; left: 5%; top: 350rpx; width: 254rpx; height: 106rpx; display: block; box-sizing: border-box">
-      <view class="iconfont icon-paishe"    color: black style="position: relative; left: 29rpx; top: 29rpx"></view>
-      <text style="position: relative; left: 87rpx; top: -31rpx">上传文档</text>
-    </view>
-
-
-    <button class='btn1' bindtap='identify'  style="position: relative; left: 30%; top: 193rpx; width: 190rpx; height: 59rpx; display: flex; box-sizing: border-box">开始识别</button>
-    <button class='btn2' bindtap='next_calculator'  style="position: relative; left: 0; top: 240rpx">手写板</button>
-  
- </view>
-=======
 <image class="bg" src="/images/星空.jpg"></image>
 <view style="width: 750rpx; height: 800rpx">
   <view style="font-size: 55rpx; color: white; width: 450rpx; position: relative; left: 21%; top: 25%">
@@ -52,4 +23,3 @@
 </view>
 </view>
  
->>>>>>> 22693fb (11.6modification)

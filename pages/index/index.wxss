@@ -39,15 +39,6 @@
    padding:0 4px;
    float:left
 }
-<<<<<<< HEAD
-
-.button1{
-  border-color: black;
-  border-width:3px;
-  background-color: burlywood;
-  border-radius: 20px;
-}
-=======
 .btn2{
   border-color: black;
   border-width:3px;
@@ -59,4 +50,3 @@
   padding:0 4px;
   float:left
 }
->>>>>>> 22693fb (11.6modification)
