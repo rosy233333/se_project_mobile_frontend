@@ -124,8 +124,9 @@ Page({
 
   },
   next_calculator(){
-    wx.navigateTo({
-      url: '/pages/index/index',
-    })
+    // wx.navigateTo({
+    //   url: '/pages/index/index',
+    // })
+    wx.navigateBack()
   }
 })
