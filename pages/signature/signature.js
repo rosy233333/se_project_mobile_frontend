@@ -38,18 +38,36 @@ Page({
     const pr = this.data.pr; // 像素比
     const query = wx.createSelectorQuery();
     query.select('#canvas').fields({ node: true, size: true }).exec((res) => {
-      const canvas = res[0].node;
-      const ctx = canvas.getContext('2d');
+      //console.log(res)
+      const canvas = res[0].node;//画布api
+      const ctx = canvas.getContext('2d');//获取画布的2d上下文
       canvas.width = this.data.width*pr; // 画布宽度
       canvas.height = this.data.height*pr; // 画布高度
+      console.log(canvas.height)
+      console.log(canvas.width)
+      
       ctx.scale(pr,pr); // 缩放比
-      ctx.lineGap = 'round';
-      ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';//线条两端的展现形式
+      ctx.lineJoin = 'round';//线条连接处的展现形式
       ctx.lineWidth = 4; // 字体粗细
       ctx.font = '40px Arial'; // 字体大小，
-      ctx.fillStyle = '#ecf0ef'; // 填充颜色
+      /*ctx.fillStyle = '#ecf0ef'; // 填充颜色*/
+      ctx.save();
+      ctx.fillStyle = '#fff';
+      ctx.globalAlpha = 0.3;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.restore();
       ctx.fillText('手写区', res[0].width / 2 - 60, res[0].height / 2)
       this.setData({ ctx, canvas })
+      //ctx.setFillStyle('#000');
+      /*var img= new Image();
+      img.src="/images/空白背景.png";
+      img.onload=imgfn
+      function imgfn(){
+      var bg = ctx.createPattern(img, "no-repeat")
+      ctx.fillStyle = bg
+      ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+}*/
     })
   },
   // 获取系统信息
@@ -70,10 +88,15 @@ Page({
     //清除画布
     this.data.first = true;
     this.data.ctx.clearRect(0, 0, this.data.width, this.data.height);
+    this.data.ctx.fillStyle="#fff";
+    this.data.ctx.fillRect(0,0,this.data.width,this.data.height);
   },
   //保存图片
   saveClick: function () {
     //console.log(this.data.first); //画板是否有编辑 true 未编辑 false 已编辑
+    //const ctx = this.data.canvas.getContext('2d');
+    //this.data.ctx.fillStyle="#fff";
+    //this.data.ctx.fillRect(0,0,this.data.width,this.data.height);
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
@@ -116,15 +139,19 @@ Page({
           })
         //保存图片到相册
         console.log(res.tempFilePath);
-         wx.saveImageToPhotosAlbum({
+        /*wx.saveImageToPhotosAlbum({
            filePath: res.tempFilePath,
            success(res) {
+             console.log('success')
              wx.showToast({
                title: '保存成功',
                icon: 'success'
              })
+           },
+           fail(res){
+            console.log('fail')
            }
-         })
+         })*/
       }
     })
   },next_calculator(){

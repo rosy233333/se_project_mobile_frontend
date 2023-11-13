@@ -71,7 +71,7 @@ Page({
           console.log(res);
           const data_str = res.data;
           const data = JSON.parse(data_str)
-           wx.navigateTo({url: '/pages/identify?image='+data.file+"&text="+data.text,})
+           wx.navigateTo({url: '/pages/identify/identify?image='+data.file+"&text="+data.text,})
           }
       })
   },
