@@ -2,15 +2,15 @@
 <image class="bg" src="/images/星空.jpg"></image>
 
 <view  style="height: 350rpx; width: 750rpx">
-  <text style="position: relative; left: 0%; top: 40%;color:white">检测识别图像：</text>
-  <image selectable="true" style="height: 350rpx; width: 500rpx; position: relative; left: 33%; top: -13%" src="{{identifyImage}}" />
+  <text style="position: relative; left: 0%; top: 5%; color: white">检测识别图像：</text>
+  <image selectable="true" style="height: 350rpx; width: 500rpx; position: relative; margin-left: 32%; margin-top: -5%" src="{{identifyImage}}" />
  
 </view>
 
 <view  style="height: 350rpx; width: 750rpx">
   <text style="position: relative; left: 0%; top: 40%;color:white ">识别结果为：</text>
  
-  <text style="position: relative; top: 40%">{{text}}</text>
+  <text style="position: relative; top: 40%;color:white">{{text}}</text>
 </view>
 
 <view style="height: 150rpx; width: 750rpx">
@@ -18,4 +18,4 @@
 </button>
 </view>
 
-<view class="iconfont icon-guanbi" style="position: relative; left: 49%; top: 130rpx; width: 54rpx; height: 50rpx; display: flex; box-sizing: border-box; color: aliceblue" bindtap="next_calculator"></view>
+<view class="iconfont icon-guanbi" style="position: relative; margin-left: 49%; margin-top: 20%; width: 54rpx; height: 50rpx; display: flex; box-sizing: border-box; color: aliceblue" bindtap="next_calculator"></view>

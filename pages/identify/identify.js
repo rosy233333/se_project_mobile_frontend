@@ -87,7 +87,7 @@ Page({
         if (res.cancel) {
           console.log('wrong')
           wx.request({
-            url: 'http://localhost:8080/use/feedback',
+            url: 'http://192.168.43.254:8080/use/feedback',
             method:'post',
             data: {
               feedback: 'wrong'
@@ -105,7 +105,7 @@ Page({
         if (res.confirm) {
           console.log('right')
           wx.request({
-            url: 'http://localhost:8080/use/feedback',
+            url: 'http://192.168.43.254:8080/use/feedback',
             method:'post',
             data: {
               feedback: 'right'

@@ -124,7 +124,7 @@ Page({
         })*/
         let that = this;
         wx.uploadFile({
-          url:'http://localhost:8080/use/image', //接受图片的接口地址
+          url:'http://192.168.43.254:8080/use/image', //接受图片的接口地址
           filePath: res.tempFilePath,
           name: 'file',
           formData: {
