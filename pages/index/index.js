@@ -60,6 +60,7 @@ Page({
   },
   identify() {
     let that = this;
+    console.log(that)
     wx.uploadFile({
       url:'http://192.168.43.254:8080/use/image', //接受图片的接口地址
       filePath: that.data.imgSrc,

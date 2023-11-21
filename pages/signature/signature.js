@@ -36,15 +36,16 @@ Page({
    */
   createCanvas() {
     const pr = this.data.pr; // 像素比
-    const query = wx.createSelectorQuery();
+    const query = wx.createSelectorQuery();//获取对象实例
     query.select('#canvas').fields({ node: true, size: true }).exec((res) => {
+      //选择获取canvas对象实例，获取节点的相关信息
       //console.log(res)
       const canvas = res[0].node;//画布api
-      const ctx = canvas.getContext('2d');//获取画布的2d上下文
+      const ctx = canvas.getContext('2d');//获取画布的2d上下文，也就是在画布上绘图的环境
       canvas.width = this.data.width*pr; // 画布宽度
       canvas.height = this.data.height*pr; // 画布高度
-      console.log(canvas.height)
-      console.log(canvas.width)
+      //console.log(canvas.height)
+      //console.log(canvas.width)
       
       ctx.scale(pr,pr); // 缩放比
       ctx.lineCap = 'round';//线条两端的展现形式
@@ -78,7 +79,7 @@ Page({
         that.setData({
           pr:res.pixelRatio,
           width: res.windowWidth,
-          height: res.windowHeight - 75,
+          height: res.windowHeight -75,
         })
       }
     })
@@ -97,6 +98,7 @@ Page({
     //const ctx = this.data.canvas.getContext('2d');
     //this.data.ctx.fillStyle="#fff";
     //this.data.ctx.fillRect(0,0,this.data.width,this.data.height);
+    //将当前画布的指定区域的内容导出生成指定大小的图片
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,

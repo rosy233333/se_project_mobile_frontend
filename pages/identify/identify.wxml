@@ -10,7 +10,7 @@
 <view  style="height: 350rpx; width: 750rpx">
   <text style="position: relative; left: 0%; top: 40%;color:white ">识别结果为：</text>
  
-  <text style="position: relative; top: 40%;color:white">{{text}}</text>
+  <text selectable style="position: relative; top: 40%;color:white">{{text}}</text>
 </view>
 
 <view style="height: 150rpx; width: 750rpx">

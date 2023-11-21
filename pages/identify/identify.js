@@ -23,11 +23,11 @@ Page({
     })
        var users=[];
        var that = this;
-       var arrayBuffer=wx.base64ToArrayBuffer(that.data.image);
+       var arrayBuffer=wx.base64ToArrayBuffer(that.data.image);//将Base64对象转成ArrayBuffer对象
        var base64=wx.arrayBufferToBase64(arrayBuffer);
-       console.log(base64);
+       //console.log(base64);
        that.setData({ identifyImage: 'data:image/jpg;base64,' + base64});
-        
+        //拼接成data URL
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
